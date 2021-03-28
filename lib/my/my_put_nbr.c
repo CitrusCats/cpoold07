@@ -1,3 +1,5 @@
+#include "my.h"
+
 int my_put_nbr(int nb)
 {
     int r = 0;
@@ -10,15 +12,16 @@ int my_put_nbr(int nb)
             nb *= -1;
             my_putchar('-');
         }
-        for (; nb != 0; count++) {
+        for (; nb != 0; ++count) {
             r *= 10;
             r += nb % 10;
             nb /= 10;
         }
-        for (; count > 0; count--) {
+        for (; count > 0; --count) {
             my_putchar(r % 10 + '0');
             r /= 10;
         }
     }
     my_putchar('\n');
+    return nb;
 }

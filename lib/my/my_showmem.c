@@ -1,17 +1,6 @@
 #include <unistd.h>
 
-void my_putchar(char c)
-{
-    write(1, &c, 1);
-}
-
-int my_strlen(const char *str)
-{
-    int count = 0;
-
-    for (; str && *str != 0; ++str, ++count);
-    return count;
-}
+#include "my.h"
 
 void my_putbase_req(int nbr, char const *base, int length)
 {
@@ -30,12 +19,6 @@ int count_digit(int nbr, int base)
         ++count;
     }
     return count;
-}
-
-int my_putstr(const char *str)
-{
-    for (; str && *str != 0; str++)
-        my_putchar(*str);
 }
 
 int my_putnbr_base(int nbr, int pad, char const *base)

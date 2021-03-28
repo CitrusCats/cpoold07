@@ -1,18 +1,10 @@
-int my_strlen(const char *str)
-{
-    int count = 0;
+#include <stddef.h>
 
-    for (; str && *str != 0; ++str, ++count);
-    return count;
-}
+#include "my.h"
 
 char *my_strncpy(char *dest, const char *src, int n)
 {
-    int len = n - 1;
-
-    if (my_strlen(src) < n)
-        len = my_strlen(src);
-    for (int i = 0; src && dest && i <= len; i++)
+    for (int i = 0; src != NULL && dest != NULL && src[i] != '\0' && i < n; ++i)
         dest[i] = src[i];
     return dest;
 }
